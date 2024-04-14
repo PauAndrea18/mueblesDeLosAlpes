@@ -14,6 +14,7 @@ package co.edu.uniandes.csw.mueblesdelosalpes.logica.interfaces;
 
 import co.edu.uniandes.csw.mueblesdelosalpes.dto.Usuario;
 import co.edu.uniandes.csw.mueblesdelosalpes.excepciones.AutenticacionException;
+import javax.ejb.Local;
 
 
 
@@ -21,6 +22,7 @@ import co.edu.uniandes.csw.mueblesdelosalpes.excepciones.AutenticacionException;
  * Contrato funcional de los servicios de autenticación en el sistema
  * @author Juan Sebastián Urrego
  */
+@Local
 public interface IServicioSeguridadMockLocal
 {
 
@@ -32,4 +34,12 @@ public interface IServicioSeguridadMockLocal
      */
     public Usuario ingresar(String nombre, String contraseña)throws AutenticacionException;
 
+    /**
+     * Registra la salida de un usuario del sistema.
+     * @param nombre Login del usuario que quiere salir del sistema.
+     * @return usuario Retorna el objeto que contiene la información del usuario que salio del sistema.
+     */
+    public Usuario salir(String nombre) throws AutenticacionException;
+    
+    public boolean usuarioEnSesion(String username) throws AutenticacionException;
 }

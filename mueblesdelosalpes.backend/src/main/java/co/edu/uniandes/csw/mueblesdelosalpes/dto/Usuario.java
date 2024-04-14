@@ -86,7 +86,7 @@ public class Usuario
     private String correo;
 
     /**
-     * Indica si el mueble fue seleccionado
+     * Indica si el usuario fue seleccionado (loggeado)
      */
     private boolean seleccion;
 
